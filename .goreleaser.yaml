@@ -9,7 +9,8 @@ before:
     - go generate ./...
 
 builds:
-  - env:
+  - binary: collabify
+    env:
       - CGO_ENABLED=0
     goos:
       - linux
@@ -35,5 +36,13 @@ changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
+      - "^docs:"
+      - "^test:"
+
+brews:
+  - name: cli
+    homepage: "https://github.com/aaron7/collabify"
+    repository:
+      owner: aaron7
+      name: homebrew-collabify
+    directory: Formula
